@@ -1,0 +1,99 @@
+﻿
+@model EmployeeViewModel
+@{
+    ViewData["Title"] = "AddEmployee";
+    var departments = new SelectList(@ViewBag.departments , "Id" , "Name")  ; 
+}
+
+<h1>Add New Employee</h1>
+<br/>
+<form asp-action="AddEmployee">
+@* 
+    <div class="form-group">
+        <label class action="col-form-label" asp-for="Image"></label>
+        <input class ="form-control" asp-for="Image"/> 
+    </div>
+ *@
+
+
+
+
+
+
+    <div class="form-group">
+        <label class action="col-form-label" asp-for = "Name "></label>
+        <input class ="form-control" asp-for ="Name"/> 
+        <span asp-validation-for="Name" action="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class action="col-form-label" asp-for = "Age"></label>
+        <input class ="form-control" asp-for ="Age"/> 
+        <span asp-validation-for="Age" action="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class action="col-form-label" asp-for = "Address"></label>
+        <input class ="form-control" asp-for ="Address"/> 
+        <span asp-validation-for="Address" action="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label class action="col-form-label" asp-for = "Salary"></label>
+        <input class ="form-control" asp-for ="Salary"/> 
+        <span asp-validation-for="Salary" action="text-danger"></span>
+    </div>
+
+     <div class="form-group">
+        <label class action="col-form-label" asp-for = "department"></label>
+        <select class="form-control" asp-items="@departments" asp-for="DepartmentId">
+            <option value="@null">=======Select Department========== </option>
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label class action="col-form-label" asp-for = "IsActive"></label>
+        <input class ="form-control" asp-for ="IsActive"/> 
+        <span asp-validation-for="IsActive" action="text-danger"></span>
+    </div>
+
+
+     <div class="form-group">
+        <label class action="col-form-label" asp-for = "Email"></label>
+        <input class ="form-control" asp-for ="Email"/> 
+        <span asp-validation-for="Email" action="text-danger"></span>
+    </div>
+
+
+
+     <div class="form-group">
+        <label class action="col-form-label" asp-for = "PhoneNumber"></label>
+        <input class ="form-control" asp-for ="PhoneNumber"/> 
+        <span asp-validation-for="PhoneNumber" action="text-danger"></span>
+    </div>
+
+
+
+
+
+     <div class="form-group">
+        <label class action="col-form-label" asp-for = "DateOfCreation"></label>
+        <input class ="form-control" asp-for ="DateOfCreation"/> 
+        <span asp-validation-for="DateOfCreation" action="text-danger"></span>
+    </div>
+
+
+
+
+  
+    <input  type="submit" value="Submit" class="btn btn-primary" />
+    <a asp-action="Index" class = "btn btn-light">Back To List</a>
+</form>
+
+@section ValidationScriptsSection{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}
